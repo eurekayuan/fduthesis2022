@@ -1,0 +1,107 @@
+\documentclass[a4paper,zihao=-4,UTF8]{ctexart}
+\pagestyle{plain}
+\date{}
+\usepackage[top=1.0in, bottom=1.0in, left=1.25in, right=1.25in]{geometry} 
+\setlength{\baselineskip}{20pt}
+\usepackage{titlesec}
+\usepackage{zhnumber}
+\usepackage{abstract}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\usepackage{color}   % May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+\usepackage{fontspec}
+
+% set font for English
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setromanfont{Times New Roman}
+% the following two are to support combined Chinese and English
+\newcommand{\hei}[1]{\heiti\sffamily #1}
+\newcommand{\song}[1]{\songti\rmfamily #1}
+
+
+% setup style for table of contents
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{tocloft}
+\titlecontents{section}[1em]{\zihao{-4}}{\contentslabel{1em}}{\hspace{-1em}}{\titlerule*[0.5pc]{$.$}\contentspage}
+\titlecontents{subsection}[3em]{\zihao{-4}}{\contentslabel{2em}}{\hspace{-2em}}{\titlerule*[0.5pc]{$.$}\contentspage}
+\titlecontents{subsubsection}[5em]{\zihao{-4}}{\contentslabel{3em}}{\hspace{-3em}}{\titlerule*[0.5pc]{$.$}\contentspage}
+\renewcommand{\contentsname}{目~录 }
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{2}\heiti}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+% update references to Chinese style, font size and type can also be set here
+\usepackage{caption}
+% uncomment this if you want to use "第一章" instead of "第 1 章"
+% \renewcommand\thesection{\zhnum{section}}
+\titleformat{\section}{\centering\hei\zihao{-2}}{第~\thesection~章}{1em}{}[]
+\titleformat{\subsection}{\hei\zihao{-3}}{\arabic{section}.\arabic{subsection}}{1em}{}[]
+\titleformat{\subsubsection}{\hei\zihao{4}}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}[]
+\renewcommand{\abstractnamefont}{\hei\zihao{-2}}
+\renewcommand{\abstracttextfont}{}
+% \renewenvironment{abstract}{\begin{center}{\hei\zihao{-2}摘~要}\end{center}\par} \\
+% \newenvironment{abstract-en}{\begin{center}{\hei\zihao{-2}Abstract}\end{center}\par}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\thefigure} {\arabic{section}-\arabic{figure}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thetable} {\arabic{section}-\arabic{table}}
+\captionsetup{labelsep=space} 
+
+
+% title text
+\newcommand{\mytitle}{一种加辣椒的番茄炒蛋}
+
+% header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\kaishu\zihao{-5}\mytitle}
+\fancyhead[R]{\kaishu\zihao{-5}\leftmark}
+\renewcommand\headrulewidth{.5pt}
+\renewcommand\footrulewidth{0pt}
+
+% for hype-reference of "section*" to work properly
+\usepackage{xparse}
+\let\oldsection\section
+\makeatletter
+\newcounter{@secnumdepth}
+\RenewDocumentCommand{\section}{s o m}{%
+  \IfBooleanTF{#1}
+    {\setcounter{@secnumdepth}{\value{secnumdepth}}% Store secnumdepth
+     \setcounter{secnumdepth}{0}% Print only up to \chapter numbers
+     \oldsection{#3}% \section*
+     \setcounter{secnumdepth}{\value{@secnumdepth}}}% Restore secnumdepth
+    {\IfValueTF{#2}% \section
+       {\oldsection[#2]{#3}}% \section[.]{..}
+       {\oldsection{#3}}}% \section{..}
+}
+\makeatother
+
+% use GB/T 7714—2015 BibTeX Style
+\usepackage{gbt7714}
+\bibliographystyle{gbt7714-numerical}
+
+
+
+
+% common packages
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor,colortbl}
+\newcommand{\zw}[1]{\textcolor{cyan}{(Zhuowen: #1)}}
+\usepackage[capitalize]{cleveref}  % Support for easy cross-referencing
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{公式}{公式}
