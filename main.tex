@@ -21,12 +21,18 @@
 \title{\hei\zihao{-2}\mytitle}
 \maketitle
 \thispagestyle{empty}
-\newpage
+\clearpage
 
 
 \pagenumbering{Roman}
+
+% important notes: if you find the ToC overflow one page, 
+% then add the following line before the overflowing section in main text 
+% \addtocontents{toc}{\protect\newpage\protect}
+
 \tableofcontents
-\newpage
+\hfill
+\clearpage
 
 
 \pagenumbering{arabic}
@@ -38,7 +44,7 @@
 \vspace{1em}\noindent
 \zihao{-3}\hei 关键词:
 \zihao{-4}\song 番茄炒蛋；辣椒
-\newpage
+\clearpage
 
 
 
@@ -50,7 +56,7 @@ This paper proposes a new cooking method of tomato scrambled eggs with pepper. I
 \zihao{-3}\hei Keywords:
 \zihao{-4}\songti \rm Tomato scrambled eggs; Pepper
 
-\newpage
+\clearpage
 
 
 
@@ -68,11 +74,11 @@ This paper proposes a new cooking method of tomato scrambled eggs with pepper. I
 
 
 
-\newpage
+\clearpage
 \section{相关工作}
 番茄炒蛋 番茄的做法古来有之.主要是生吃或熟吃.生吃中，有直接当水果生啃的\cite{example2022}，也有加点糖凉拌的\cite{example2022}.其中最新的做法是后处理成番茄酱\cite{example2022}，这类吃法都挺不错的，但人不能总吃生菜吧？最重要的熟菜中，番茄的做法也纷繁复杂.但万变不离其宗，不是西红柿牛腩，就是牛腩西红柿，其中与本方法很相关的是一道番茄蛋汤，但除了广东人，谁没事喝汤啊？从番茄的角度来说还得是番茄炒蛋.
 
-\newpage
+\clearpage
 \section{方法}
 我们采用了一种流程化和客观的方法烹饪出符合我们的加辣椒的番茄炒蛋。整个烹饪分为数个步骤，主要是辣椒前处理、加入番茄炒蛋、和后处理。
 
@@ -93,7 +99,7 @@ This paper proposes a new cooking method of tomato scrambled eggs with pepper. I
 看看是不是可以引用\cref{eq:1}.
 
 
-\newpage
+\clearpage
 \section{实验}
 Quantitative results 由\cref{tab:1}所示，qualitative results由\cref{fig:1}所示.
 
@@ -123,19 +129,18 @@ Quantitative results 由\cref{tab:1}所示，qualitative results由\cref{fig:1}�
 
 
 
-\newpage
+\clearpage
 \section{结论}
 本文开创性的提出了一种加入墨西哥辣椒版的番茄炒鸡蛋，它无缝衔接了淮扬菜和川菜两大菜系，提升了番茄炒蛋的味觉维度，进而弥合了上海和皖南人民对于番茄炒蛋的苛刻要求，实属一篇开创新的作品.当然，本文略有不足，有些人吃完拉肚子，有些人吃完说“好”的时候发生了下巴脱臼，还有一些人因为菜肴太好吃，偷偷没有吃完，把菜带回了家.但这些缺点都是小缺点，未来很容易就能补救，在我们开创性的研究下不值一提.
 
 
 
-
-\newpage
+\clearpage
 \bibliography{references}
 
 
 
-\newpage
+\clearpage
 \section*{致谢}
 I would like to thank xxx for their advice.
 

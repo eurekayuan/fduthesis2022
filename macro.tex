@@ -15,9 +15,22 @@
     linktoc=all,     %set to all if you want both sections and subsections linked
     linkcolor=black,  %choose some color if you want links to stand out
 }
-\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\numberwithin{figure}{section}  % numbering restarts at each section
+\usepackage{xcolor,colortbl}
+\newcommand{\zw}[1]{\textcolor{cyan}{(Zhuowen: #1)}}
+\usepackage[capitalize]{cleveref}  % Support for easy cross-referencing
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{公式}{公式}
+
 
 % set font for English
+\usepackage{fontspec}
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 \setromanfont{Times New Roman}
@@ -93,15 +106,3 @@
 
 
 
-% common packages
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{graphicx}
-\usepackage{enumitem}
-\usepackage{amsmath,amssymb}
-\usepackage{xcolor,colortbl}
-\newcommand{\zw}[1]{\textcolor{cyan}{(Zhuowen: #1)}}
-\usepackage[capitalize]{cleveref}  % Support for easy cross-referencing
-\crefname{figure}{图}{图}
-\crefname{table}{表}{表}
-\crefname{equation}{公式}{公式}
